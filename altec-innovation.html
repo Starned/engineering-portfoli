@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTEC Innovation | Engineering Digital Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="index.html">Engineering Portfolio</a></h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="spaghetti-tower.html">Spaghetti Tower</a></li>
+          <li><a href="hydroponics.html">Hydroponics</a></li>
+          <li><a href="guest-speakers.html">Guest Speakers</a></li>
+          <li><a href="workplace-readiness.html">Workplace Readiness</a></li>
+          <li><a href="hallowheels.html">Hallowheels</a></li>
+          <li><a href="altec-innovation.html" class="active">ALTEC Innovation</a></li>
+          <li><a href="game-design.html">Game Design</a></li>
+          <li><a href="spatial-visualization.html">Spatial Visualization</a></li>
+          <li><a href="autocad.html">AutoCAD</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-title">
+        <h1>ALTEC Innovation</h1>
+      </div>
+
+      <section class="card">
+        <h2>Project Description</h2>
+        <p>For the ALTEC Innovation Challenge, my team made a website for PulseGuard. PulseGuard was a driver safety concept based on a wristband that monitors heart rate and alerts the driver if their heart rate drops, which is a sign of drowsiness.</p>
+        <p>The website explained how the wristband works and gave users a place to find information about setup troubleshooting battery life and how to get in touch. Our design was planned to cost about $30 per unit which was much cheaper than AI dash cams.</p>
+        <figure>
+          <img src="images/game-design-edp-whiteboard.png" alt="Whiteboard showing our EDP for Keeping Drowsy Drivers Awake with brainstorming, sketches, and design planning">
+          <figcaption>Showing our EDP—brainstorming, sketches, and design planning on the whiteboard.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Project Slideshow</h2>
+        <div class="slide-row">
+          <figure>
+            <img src="images/altec-slide-1.png" alt="PulseGuard community outreach slide" class="slide-image">
+            <figcaption>Community outreach results.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/altec-slide-2.png" alt="PulseGuard user quotes slide" class="slide-image">
+            <figcaption>User quotes about drowsy driving.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/altec-slide-3.png" alt="PulseGuard faults of other designs slide" class="slide-image">
+            <figcaption>Faults of other designs.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Final Document</h2>
+        <div class="link-callout">
+          <p><strong>Project Website:</strong> <a href="https://pulseguard.info/" target="_blank" rel="noopener">pulseguard.info</a></p>
+          <p>The final website had a short explanation of the product a how-it-works section an FAQ and a way to contact us.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Final Project and Prototype</h2>
+        <figure>
+          <img src="images/altec-cad.png" alt="PulseGuard CAD image">
+          <figcaption>PulseGuard CAD image.</figcaption>
+        </figure>
+        <p>Our final idea focused on helping tired drivers stay alert. The wristband was going to use a 3D printed shell and an Arduino to control when it vibrated. The code used a running average to decide when to trigger the alert. For the demo I reversed the code so it would vibrate when I did jumping jacks.</p>
+        <p>The older prototype has pretty much been lost to my closet. It also did not really look like a wristband and was mostly just the hardware.</p>
+      </section>
+
+      <section class="card">
+        <h2>Awards</h2>
+        <figure>
+          <img src="images/aLTEHCK stage.png" alt="Classmates holding the second place award at ALTEC">
+          <figcaption>Our classmates holding the award for second place. This is not our team but they are from our class.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Overall Project Reflection</h2>
+        <p>This project gave me more experience working with a team and presenting an idea. It also helped me think about how a product should be explained to real users. Sadly we lost but I still learned a lot from the process and from building the site and demo.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineering Digital Portfolio</p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav ul').classList.toggle('open');
+    });
+  </script>
+  <script src="edp.js"></script>
+</body>
+</html>

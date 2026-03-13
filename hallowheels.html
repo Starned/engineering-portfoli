@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallowheels | Engineering Digital Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="index.html">Engineering Portfolio</a></h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="spaghetti-tower.html">Spaghetti Tower</a></li>
+          <li><a href="hydroponics.html">Hydroponics</a></li>
+          <li><a href="guest-speakers.html">Guest Speakers</a></li>
+          <li><a href="workplace-readiness.html">Workplace Readiness</a></li>
+          <li><a href="hallowheels.html" class="active">Hallowheels</a></li>
+          <li><a href="altec-innovation.html">ALTEC Innovation</a></li>
+          <li><a href="game-design.html">Game Design</a></li>
+          <li><a href="spatial-visualization.html">Spatial Visualization</a></li>
+          <li><a href="autocad.html">AutoCAD</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Hallowheels</h1>
+      </div>
+
+      <section class="card">
+        <h2>Project Description</h2>
+        <p>For Hallowheels our team built a Monsters, Inc. door costume. We started by sketching the design on paper and adding dimensions so we could plan the size before building. After that we used PVC pipe to assemble the main frame.</p>
+        <p>Once the frame was finished we added plywood panels to create the outside shape of the door. During the build we realized we did not have enough PVC joints to finish the structure so we solved the problem by 3D printing one. That let us complete the frame and keep the project moving.</p>
+        <figure>
+          <img src="images/Setting up HW.jpg" alt="Jerry setting up Rowan's costume">
+          <figcaption>Jerry setting up Rowan's costume.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Final monstars ink.jpg" alt="Final Monsters, Inc. door project">
+          <figcaption>Final Monsters, Inc. door project.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Overall Project Reflection</h2>
+        <p>This project gave me more experience working through a build from the planning stage to the final assembly. It also showed me that projects rarely go exactly as expected. When we ran out of parts we had to adjust quickly and find another way to finish the build.</p>
+        <p>Hallowheels was a good reminder that designs often change while you are building. We had to solve problems as they came up and keep working until the final result came together.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineering Digital Portfolio</p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav ul').classList.toggle('open');
+    });
+  </script>
+  <script src="edp.js"></script>
+</body>
+</html>

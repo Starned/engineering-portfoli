@@ -1,0 +1,552 @@
+/* i swear google fonts breaks like once a month */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap');
+
+/* colors and stuff, took forever to pick these */
+/* yoinked from izhargm.github.io. default is white now */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef2f7;
+  --bg-card: #ffffff;
+  --border-color: #d8e0ea;
+  --accent-primary: #e85d04;
+  --accent-secondary: #3d5a80;
+  --text-primary: #102033;
+  --text-secondary: #576779;
+  --navy: #f8fafc;
+  --navy-light: #ffffff;
+  --accent: #e85d04;
+  --accent-hover: #f97316;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text: #102033;
+  --text-muted: #576779;
+  --border: #d8e0ea;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --radius: 4px;
+  --max-w: 1120px;
+}
+
+/* dark mode colors. type "dark" on the site to activate lol */
+body.dark-mode {
+  --bg-primary: #0a0f14;
+  --bg-secondary: #111920;
+  --bg-card: #151d26;
+  --border-color: #2a3a4a;
+  --accent-primary: #e85d04;
+  --accent-secondary: #3d5a80;
+  --text-primary: #e8eaed;
+  --text-secondary: #8b9caa;
+  --navy: #0a0f14;
+  --navy-light: #111920;
+  --accent: #e85d04;
+  --accent-hover: #f97316;
+  --bg: #0a0f14;
+  --white: #151d26;
+  --text: #e8eaed;
+  --text-muted: #8b9caa;
+  --border: #2a3a4a;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .img-placeholder {
+  background: #1c2128;
+  border-color: #2a3a4a;
+  color: #8b9caa;
+}
+
+/* why is border-box not the default in 2026 */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* blueprint grid background pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(61, 90, 128, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 90, 128, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.dark-mode::before {
+  background-image:
+    linear-gradient(rgba(61, 90, 128, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 90, 128, 0.06) 1px, transparent 1px);
+}
+
+/* header. sticky so it follows you around like my cat */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(248, 250, 252, 0.94);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+body.dark-mode .site-header {
+  background: rgba(10, 15, 20, 0.94);
+}
+
+.header-inner {
+  min-width: max-content;
+  padding: 0 2rem;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex: 0 0 auto;
+}
+
+.logo a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.logo a::before {
+  content: "// ";
+  color: var(--accent-primary);
+  font-weight: 400;
+}
+
+.logo::after {
+  display: none;
+}
+
+/* hamburger menu for mobile, this was annoying to get right */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.main-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  min-width: max-content;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.45rem 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  color: var(--accent-primary);
+}
+
+.main-nav a.active {
+  color: var(--accent-primary);
+}
+
+/* mobile responsive crap */
+@media (max-width: 900px) {
+  .nav-toggle { display: block; }
+
+  .main-nav {
+    overflow-x: visible;
+    width: 100%;
+  }
+
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 0.25rem;
+  }
+
+  .main-nav ul.open { display: flex; }
+
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* keeps everything from touching the edges */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  padding: 6.5rem 0 4rem;
+  min-height: 100vh;
+}
+
+/* fonts. spent way too long on these sizes ngl */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), transparent);
+  margin-top: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 3rem 0 1rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), transparent);
+  margin-top: 0.4rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.page-title {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.page-title h1 { margin-bottom: 0; }
+.page-title h1::after { margin-top: 0.5rem; }
+
+.page-title p {
+  font-size: 1rem;
+}
+
+/* cards for each section on project pages */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* hero thing, not even using this rn but whatever */
+.hero {
+  text-align: left;
+  padding: 2rem 0 2.25rem;
+}
+
+.hero h1 { font-size: 2.5rem; }
+.hero h1::after { display: block; }
+
+.hero .hero-sub {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0.5rem 0 0;
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 1rem 0 0;
+}
+
+/* home page grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-link {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.project-link:hover {
+  border-color: var(--accent-primary);
+  background: rgba(232, 93, 4, 0.08);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+body.dark-mode .project-link:hover {
+  border-color: var(--accent-primary);
+  background: rgba(232, 93, 4, 0.06);
+}
+
+/* placeholder boxes for images i havent added yet lmao */
+.img-placeholder {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 1rem 0;
+  text-align: center;
+  padding: 1rem;
+}
+
+.img-placeholder.tall { min-height: 280px; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+
+figure { margin: 1.25rem 0; }
+
+figcaption {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+/* horizontal scroll for the altec slides */
+.slide-row {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.slide-row .img-placeholder {
+  min-width: 260px;
+  flex-shrink: 0;
+}
+
+.slide-row figure {
+  min-width: 320px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.slide-image {
+  width: 320px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--bg-primary);
+}
+
+/* engineering design process steps on hallowheels page */
+.edp-step { margin-bottom: 1.75rem; }
+
+.edp-step h3 {
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-primary);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* the blue left border box for external links */
+.link-callout {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.link-callout p { margin: 0; }
+.link-callout p + p { margin-top: 0.5rem; }
+
+/* guest speaker and certification cards, same damn styles */
+.speaker-card,
+.cert-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.speaker-card h3,
+.cert-item h3 {
+  margin-top: 0;
+}
+
+.cert-item figure {
+  margin: 1rem 0 0;
+}
+.cert-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+.cert-item figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* about me page */
+.about-card {
+  text-align: center;
+}
+.about-card #about-photo {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-card p {
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* taper link easter egg - no visual cues */
+.taper-link {
+  cursor: default;
+}
+.taper-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+.taper-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.taper-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* footer is boring but it works */
+.site-footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}

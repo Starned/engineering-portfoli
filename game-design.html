@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Design | Engineering Digital Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="index.html">Engineering Portfolio</a></h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="spaghetti-tower.html">Spaghetti Tower</a></li>
+          <li><a href="hydroponics.html">Hydroponics</a></li>
+          <li><a href="guest-speakers.html">Guest Speakers</a></li>
+          <li><a href="workplace-readiness.html">Workplace Readiness</a></li>
+          <li><a href="hallowheels.html">Hallowheels</a></li>
+          <li><a href="altec-innovation.html">ALTEC Innovation</a></li>
+          <li><a href="game-design.html" class="active">Game Design</a></li>
+          <li><a href="spatial-visualization.html">Spatial Visualization</a></li>
+          <li><a href="autocad.html">AutoCAD</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Game Design</h1>
+      </div>
+
+      <section class="card">
+        <h2>Engineering Design Process</h2>
+        <h3>Problem Identification</h3>
+        <p>For this project I wanted to make a small Guess Who game for our engineering class.</p>
+
+        <h3>Research and Constraints</h3>
+        <p>I looked online for ideas and found different 3D printed Guess Who boards. I also had to keep the design simple enough to work with the time we had in class.</p>
+
+        <h3>Brainstorming and Ideation</h3>
+        <p>After looking at other ideas I decided to simplify the game. I moved away from flip-up pieces and started thinking about a board with pop-out squares.</p>
+
+        <h3>Design Sketches or Models</h3>
+        <p>The final design was a 5x5 board where each square represented a person from our engineering class.</p>
+        <figure>
+          <img src="images/guess-who-edp-drawing.png" alt="EDP drawing of Guess Who board with 5x5 grid of 3D square cells">
+          <figcaption>EDP drawing of the Guess Who board design.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/guess-who-peg-wesley-owen.png" alt="Example peg for Guess Who game with Wesley Owen name tag">
+          <figcaption>Example peg for the Guess Who board.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/guess-who-player-card-3d.png" alt="3D model of player card in Fusion 360">
+          <figcaption>3D model of the player card in Fusion 360.</figcaption>
+        </figure>
+
+        <h3>Iterations and Improvements</h3>
+        <p>I made changes to simplify the design and make it more realistic to build. The biggest change was using pop-out squares instead of flip-up parts.</p>
+
+        <h3>Final Solution</h3>
+        <p>The final idea was a simple class-themed Guess Who board made for 3D printing. I never got to print the final version because class was very busy.</p>
+        <figure>
+          <img src="images/guess-who-3d-model.png" alt="3D model of Guess Who board in Fusion 360">
+          <figcaption><em>3D model of the Guess Who board in Fusion 360.</em></figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Overall Project Reflection</h2>
+        <p>This project helped me learn more about designing for 3D printing. It also showed me that a design may need changes before it is ready.</p>
+        <p>If I did it again I would test the fit of the pieces earlier.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineering Digital Portfolio</p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav ul').classList.toggle('open');
+    });
+  </script>
+  <script src="edp.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Speakers | Engineering Digital Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="index.html">Engineering Portfolio</a></h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="spaghetti-tower.html">Spaghetti Tower</a></li>
+          <li><a href="hydroponics.html">Hydroponics</a></li>
+          <li><a href="guest-speakers.html" class="active">Guest Speakers</a></li>
+          <li><a href="workplace-readiness.html">Workplace Readiness</a></li>
+          <li><a href="hallowheels.html">Hallowheels</a></li>
+          <li><a href="altec-innovation.html">ALTEC Innovation</a></li>
+          <li><a href="game-design.html">Game Design</a></li>
+          <li><a href="spatial-visualization.html">Spatial Visualization</a></li>
+          <li><a href="autocad.html">AutoCAD</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Guest Speakers</h1>
+        <p>Guest speakers and class sessions.</p>
+      </div>
+
+      <article class="speaker-card">
+        <h3>Mrs. Fairbanks</h3>
+        <figure>
+          <img src="images/fairbanks.PNG" alt="Mrs. Fairbanks">
+          <figcaption>Mrs. Fairbanks speaking to the class.</figcaption>
+        </figure>
+        <p>Mrs. Fairbanks came in to talk to us about hydroponics. She explained how the systems work and what is needed to keep the plants healthy. She also talked about how these systems are used outside of school in real agriculture.</p>
+        <ol>
+          <li>Hydroponic systems can grow plants without using soil.</li>
+          <li>The water and nutrients have to be checked regularly or the plants can die.</li>
+          <li>Small changes in the environment can have a big effect on how well the plants grow.</li>
+        </ol>
+      </article>
+
+      <article class="speaker-card">
+        <h3>ONET Session</h3>
+        <figure>
+          <img src="images/Onet thing.PNG" alt="ONET session">
+          <figcaption>ONET session.</figcaption>
+        </figure>
+        <p>During this session we looked at the ONET website and explored different career paths. We learned how to search for jobs and see what skills and education they require. It was helpful for thinking about future plans.</p>
+        <ol>
+          <li>Different careers need different levels of education and training.</li>
+          <li>Researching careers early helps you plan ahead.</li>
+          <li>ONET is a useful tool for finding out what a job actually involves.</li>
+        </ol>
+      </article>
+
+      <article class="speaker-card">
+        <h3>Alex Smith</h3>
+        <figure>
+          <img src="images/us looking menicingly at alex.png" alt="Alex Smith presenting to the class">
+          <figcaption>Alex Smith visiting our class.</figcaption>
+        </figure>
+        <p>Near the end of the year we were visited by Burton alumni Alex Smith. He is currently studying engineering at UVA. During his visit he talked about how the engineering and math classes we are taking now helped him feel more prepared for college-level courses. He also shared some of his own experiences in college and answered questions from the class.</p>
+        <ol>
+          <li>The skills we learn in high school engineering carry over into college.</li>
+          <li>College engineering courses build on what we already know.</li>
+          <li>Asking questions and staying curious helps you get more out of your education.</li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineering Digital Portfolio</p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav ul').classList.toggle('open');
+    });
+  </script>
+  <script src="edp.js"></script>
+</body>
+</html>

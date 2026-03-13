@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workplace Readiness | Engineering Digital Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo"><a href="index.html">Engineering Portfolio</a></h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="spaghetti-tower.html">Spaghetti Tower</a></li>
+          <li><a href="hydroponics.html">Hydroponics</a></li>
+          <li><a href="guest-speakers.html">Guest Speakers</a></li>
+          <li><a href="workplace-readiness.html" class="active">Workplace Readiness</a></li>
+          <li><a href="hallowheels.html">Hallowheels</a></li>
+          <li><a href="altec-innovation.html">ALTEC Innovation</a></li>
+          <li><a href="game-design.html">Game Design</a></li>
+          <li><a href="spatial-visualization.html">Spatial Visualization</a></li>
+          <li><a href="autocad.html">AutoCAD</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Workplace Readiness</h1>
+      </div>
+
+      <section class="card">
+        <h2>Professional Workplace</h2>
+        <figure>
+          <img src="images/Eng stock image.jpg" alt="Professional engineering workspace">
+          <figcaption>A professional and organized engineering workspace.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Reflection on Professional Environment</h2>
+        <p>Using Solid Professor helped me understand professional work better. It showed the importance of paying attention and following directions.</p>
+        <p>If you rush or skip steps mistakes happen more easily.</p>
+      </section>
+
+      <section class="card">
+        <h2>Legibility and Organization</h2>
+        <p>Legibility and organization matter because other people need to understand your work. If notes or drawings are messy mistakes happen.</p>
+        <p>Solid Professor also showed that clear directions make work easier to follow.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineering Digital Portfolio</p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav ul').classList.toggle('open');
+    });
+  </script>
+  <script src="edp.js"></script>
+</body>
+</html>
