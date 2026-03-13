@@ -46,25 +46,32 @@
 
       <section class="card">
         <h2>Our EDP</h2>
-        <div class="link-callout">
-          <p><strong>EDP Presentation:</strong> <a href="images/Tower EDP Presentation.pdf" target="_blank" rel="noopener">Tower EDP Presentation (PDF)</a></p>
+        <div class="pdf-scroll">
+          <embed src="images/Tower EDP Presentation.pdf#toolbar=0" type="application/pdf" class="pdf-embed">
         </div>
+        <p><a href="images/Tower EDP Presentation.pdf" target="_blank" rel="noopener">Open PDF in new tab</a></p>
       </section>
 
       <section class="card">
         <h2>Project Photos</h2>
-        <figure>
-          <img src="images/Our supplies spagget.jpg" alt="Our materials and supplies for the Spaghetti Tower project">
-          <figcaption>Our materials and supplies at the start of the project.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Me looking autistic spagett.jpg" alt="Working on the tower">
-          <figcaption>Working on the tower build.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Me and my partner spagetti.jpg" alt="Partner and me with our completed tower">
-          <figcaption>My partner and me with our completed Spaghetti Tower.</figcaption>
-        </figure>
+        <div class="img-scroll">
+          <figure>
+            <img src="images/Brainstorm paper for spagetti tower.jpg" alt="Brainstorm paper for spaghetti tower">
+            <figcaption>Brainstorm paper for spaghetti tower.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Our supplies spagget.jpg" alt="Our materials and supplies for the Spaghetti Tower project">
+            <figcaption>Our materials and supplies at the start of the project.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Me looking autistic spagett.jpg" alt="Working on the tower">
+            <figcaption>Working on the tower build.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Me and my partner spagetti.jpg" alt="Partner and me with our completed tower">
+            <figcaption>My partner and me with our completed Spaghetti Tower.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="card">
@@ -83,10 +90,6 @@
     </div>
   </main>
 
-  <div id="taper-overlay" class="taper-overlay" aria-hidden="true">
-    <img src="images/taper-low-fade.png" alt="Get a taper low fade">
-  </div>
-
   <footer class="site-footer">
     <p>Engineering Digital Portfolio</p>
   </footer>
@@ -96,24 +99,21 @@
       document.querySelector('.main-nav ul').classList.toggle('open');
     });
     (function() {
-      var overlay = document.getElementById('taper-overlay');
       var links = document.querySelectorAll('.taper-link');
       function showTaper() {
-        overlay.classList.add('visible');
-        overlay.setAttribute('aria-hidden', 'false');
+        var overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;';
+        var img = document.createElement('img');
+        img.src = 'images/taper-low-fade.png';
+        img.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;';
+        overlay.appendChild(img);
+        document.body.appendChild(overlay);
         setTimeout(function() {
-          overlay.classList.remove('visible');
-          overlay.setAttribute('aria-hidden', 'true');
+          overlay.remove();
         }, 500);
       }
       links.forEach(function(el) {
         el.addEventListener('click', showTaper);
-        el.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            showTaper();
-          }
-        });
       });
     })();
   </script>

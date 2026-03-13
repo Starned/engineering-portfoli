@@ -7,12 +7,17 @@
 
   // 1% chance every image becomes miso beef. like mr beast
   if (Math.random() < 1 / 100) {
-    window.addEventListener('DOMContentLoaded', function() {
+    function misoAll() {
       var imgs = document.querySelectorAll('img');
       for (var i = 0; i < imgs.length; i++) {
         imgs[i].src = 'images/miso.jpg';
       }
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      misoAll();
+      setTimeout(misoAll, 50);
     });
+    window.addEventListener('load', misoAll);
   }
 
   // 10% chance the femboy eee guy shows up on the side
